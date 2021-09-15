@@ -8,3 +8,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "JetpackWanAndroid"
 include ':app'
+include ':baseLib'
