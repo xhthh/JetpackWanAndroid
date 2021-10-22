@@ -9,4 +9,17 @@ dependencies {
     api(Android.coreKtx)
     api(Android.material)
     api(Android.constraintlayout)
+
+    /**
+     * lifecycle相关包括liveData、viewModel
+     */
+    api(Android.lifecycle.liveDataKtx)
+    api(Android.lifecycle.viewModelKtx)
+
+
+    /**
+     * navigation相关
+     */
+    api(Android.navigation.fragmentKtx)
+    api(Android.navigation.uiKtx)
 }
