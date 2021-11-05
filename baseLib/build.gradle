@@ -22,4 +22,6 @@ dependencies {
      */
     api(Android.navigation.fragmentKtx)
     api(Android.navigation.uiKtx)
+
+    api(ThirdParty.aviUi)
 }
