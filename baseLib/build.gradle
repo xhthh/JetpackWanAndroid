@@ -24,4 +24,13 @@ dependencies {
     api(Android.navigation.uiKtx)
 
     api(ThirdParty.aviUi)
+
+    api(ThirdParty.okhttp)
+    api(ThirdParty.rxjava)
+    api(ThirdParty.rxAndroid)
+    api(ThirdParty.cookieJar)
+
+    api(ThirdParty.retrofit.retrofit)
+    api(ThirdParty.retrofit.scalars)
+    api(ThirdParty.retrofit.gson)
 }
