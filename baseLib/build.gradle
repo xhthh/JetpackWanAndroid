@@ -30,4 +30,8 @@ dependencies {
     api(ThirdParty.retrofit.retrofit)
     api(ThirdParty.retrofit.scalars)
     api(ThirdParty.retrofit.gson)
+
+    api(ThirdParty.banner)
+    api(ThirdParty.glide.glide)
+    api(ThirdParty.glide.transformations)
 }

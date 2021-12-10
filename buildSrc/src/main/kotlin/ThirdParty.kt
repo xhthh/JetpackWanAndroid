@@ -11,6 +11,13 @@ object ThirdParty {
 
     const val cookieJar = "com.github.franmontiel:PersistentCookieJar:v1.0.1"
 
+    const val banner = "cn.bingoogolapple:bga-banner:2.2.7"
+
+    val glide = Glide
+    object Glide {
+        const val glide = "com.github.bumptech.glide:glide:4.11.0"
+        const val transformations = "jp.wasabeef:glide-transformations:4.1.0"
+    }
 
     val retrofit = Retrofit
     object Retrofit {
