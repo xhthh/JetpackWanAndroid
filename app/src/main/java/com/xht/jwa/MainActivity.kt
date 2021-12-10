@@ -1,17 +1,25 @@
 package com.xht.jwa
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
-import com.xht.jwa.databinding.ActivityMainBinding
+import com.xht.base_wa_lib.base.BaseLoadingActivity
 
-class MainActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityMainBinding
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-//        setContentView(R.layout.activity_main)
+/**
+ * 主页面
+ *      1.用于承载Fragment
+ */
+class MainActivity : BaseLoadingActivity() {
 
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-        binding.tvText.text = "标题"
+    override fun init2(savedInstanceState: Bundle?) {
+
     }
+
+    override fun getLayoutId(): Int {
+        return R.layout.activity_main
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+
+    }
+
 }

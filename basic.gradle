@@ -1,13 +1,21 @@
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
 android {
-    compileSdk Version.compileSdkVersion
-
+    compileSdkVersion Version.compileSdkVersion
+    buildToolsVersion Version.buildToolsVersion
     defaultConfig {
-        minSdk Version.minSdkVersion
-        targetSdk Version.targetSdkVersion
+        minSdkVersion Version.minSdkVersion
+        targetSdkVersion Version.targetSdkVersion
 
+        compileOptions {
+            sourceCompatibility JavaVersion.VERSION_1_8
+            targetCompatibility JavaVersion.VERSION_1_8
+        }
+        kotlinOptions {
+            jvmTarget = "1.8"
+        }
     }
 
     buildTypes {
@@ -17,7 +25,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             //是否开启调试模式
             debuggable false
-            buildConfigField 'String', 'BASE_URL','"https://www.wanandroid.com"'
+            buildConfigField 'String', 'BASE_URL', '"https://www.wanandroid.com"'
         }
         debug {
             //是否开启混淆
@@ -25,7 +33,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             //是否开启调试模式
             debuggable true
-            buildConfigField 'String', 'BASE_URL','"https://www.wanandroid.com"'
+            buildConfigField 'String', 'BASE_URL', '"https://www.wanandroid.com"'
         }
         local {
             //是否开启混淆
@@ -33,7 +41,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             //是否开启调试模式
             debuggable true
-            buildConfigField 'String', 'BASE_URL','"https://www.wanandroid.com"'
+            buildConfigField 'String', 'BASE_URL', '"https://www.wanandroid.com"'
         }
     }
 
@@ -49,8 +57,4 @@ android {
         //noinspection DataBindingWithoutKapt
         enabled = true
     }
-    buildFeatures {
-        viewBinding true
-    }
-
 }

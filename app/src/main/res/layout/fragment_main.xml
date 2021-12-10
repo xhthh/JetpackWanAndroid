@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <!--
+      1. fitsSystemWindows 生效前提：当前页面没有标题栏，并且状态栏或者底部导航栏透明
+
+      2. fitsSystemWindows = true，表示内容区不延伸到状态栏或底部导航栏
+
+      3. fitsSystemWindows = false，表示内容区延伸到状态栏或底部导航栏
+      -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?attr/main_bg_1"
+        android:fitsSystemWindows="true">
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/vpHome"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:overScrollMode="never"
+            app:layout_constraintBottom_toTopOf="@id/btnNav"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--
+            解决安卓底部导航大于3个时标题隐藏的问题
+            app:labelVisibilityMode="labeled"
+            不加这个 选中和未选中高度差别大
+        -->
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/btnNav"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:background="?attr/main_bg_1"
+            app:itemIconTint="@drawable/selector_bottom_navigation_item"
+            app:itemTextColor="@drawable/selector_bottom_navigation_item"
+            app:labelVisibilityMode="labeled"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:menu="@menu/main_bottom_navigation" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
