@@ -12,7 +12,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
-import androidx.navigation.fragment.NavHostFragment
+import com.xht.base_lib.navigation.NavHostFragment
 import com.xht.base_lib.utils.ParamUtil
 
 /**

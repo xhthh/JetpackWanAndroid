@@ -1,6 +1,7 @@
 package com.xht.base_lib.common
 
 import android.os.Parcelable
+import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
@@ -19,8 +20,10 @@ fun ViewPager.initFragment(
     fragments: MutableList<Fragment>,
 ): ViewPager {
     //设置适配器
-    adapter = object : FragmentStatePagerAdapter(manager,
-        BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
+    adapter = object : FragmentStatePagerAdapter(
+        manager,
+        BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT
+    ) {
         override fun getCount(): Int = fragments.size
 
         override fun getItem(position: Int): Fragment {
@@ -53,4 +56,21 @@ fun ViewPager.doSelected(selected: (Int) -> Unit) {
         override fun onPageScrollStateChanged(state: Int) {
         }
     })
+}
+
+/**
+ * 防止重复点击
+ * @param interval 重复间隔
+ * @param onClick  事件响应
+ */
+var lastTime = 0L
+fun View.clickNoRepeat(interval: Long = 400, onClick: (View) -> Unit) {
+    setOnClickListener {
+        val currentTime = System.currentTimeMillis()
+        if (lastTime != 0L && (currentTime - lastTime < interval)) {
+            return@setOnClickListener
+        }
+        lastTime = currentTime
+        onClick(it)
+    }
 }

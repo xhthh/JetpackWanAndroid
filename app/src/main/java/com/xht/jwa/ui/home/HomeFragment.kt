@@ -6,7 +6,6 @@ import android.widget.ImageView
 import androidx.lifecycle.Observer
 import cn.bingoogolapple.bgabanner.BGABanner
 import com.xht.base_lib.common.loadUrl
-import com.xht.base_lib.common.toast
 import com.xht.base_wa_lib.base.BaseLazyLoadingFragment
 import com.xht.jwa.R
 import com.xht.jwa.databinding.FragmentHomeBinding
@@ -87,8 +86,13 @@ class HomeFragment : BaseLazyLoadingFragment<FragmentHomeBinding>(),
         model: String?,
         position: Int
     ) {
-        toast("点击了：$position")
-        //        nav().navigate()
+        nav().navigate(R.id.action_main_fragment_to_web_fragment, Bundle().apply {
+            bannerList?.get(position)?.let {
+                putString("loadUrl", it.url)
+                putString("title", it.title)
+                putInt("id", it.id)
+            }
+        })
     }
 
 

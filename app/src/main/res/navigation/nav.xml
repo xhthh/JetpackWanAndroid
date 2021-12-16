@@ -11,7 +11,17 @@
         android:label="MainFragment"
         tools:layout="@layout/fragment_main">
 
+        <!--web-->
+        <action
+            android:id="@+id/action_main_fragment_to_web_fragment"
+            app:destination="@+id/web_fragment" />
+
     </fragment>
 
+    <fragment
+        android:id="@+id/web_fragment"
+        android:name="com.xht.jwa.ui.web.WebFragment"
+        android:label="WebFragment"
+        tools:layout="@layout/fragment_web" />
 
 </navigation>

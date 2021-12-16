@@ -22,4 +22,8 @@ class MainActivity : BaseLoadingActivity() {
 
     }
 
+
+    override fun onSupportNavigateUp(): Boolean {
+        return super.onSupportNavigateUp()
+    }
 }
