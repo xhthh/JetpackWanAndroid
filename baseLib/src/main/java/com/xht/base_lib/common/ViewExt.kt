@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
 import androidx.viewpager.widget.ViewPager
+import com.scwang.smartrefresh.layout.SmartRefreshLayout
 
 /**
  * 视图扩展方法
@@ -73,4 +74,26 @@ fun View.clickNoRepeat(interval: Long = 400, onClick: (View) -> Unit) {
         lastTime = currentTime
         onClick(it)
     }
+}
+
+/**
+ * 隐藏刷新加载ui
+ */
+fun SmartRefreshLayout.smartDismiss() {
+    finishRefresh(0)
+    finishLoadMore(0)
+}
+
+/**
+ * 配置SmartRefreshLayout
+ */
+fun SmartRefreshLayout.smartConfig() {
+    //加载
+    setEnableLoadMore(true)
+    //刷新
+    setEnableRefresh(true)
+    //不满一页关闭加载
+    //setEnableLoadMoreWhenContentNotFull(false)
+    //滚动回弹
+    setEnableOverScrollDrag(true)
 }

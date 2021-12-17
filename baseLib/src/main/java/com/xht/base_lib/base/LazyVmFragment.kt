@@ -1,5 +1,6 @@
 package com.xht.base_lib.base
 
+import android.os.Bundle
 import androidx.databinding.ViewDataBinding
 
 /**
@@ -14,6 +15,9 @@ abstract class LazyVmFragment<BD : ViewDataBinding> : BaseVmFragment<BD>() {
             lazyInit()
             isLoaded = true
         }
+    }
+
+    override fun init(savedInstanceState: Bundle?) {
     }
 
     override fun onDestroyView() {

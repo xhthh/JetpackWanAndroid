@@ -1,5 +1,6 @@
 package com.xht.jwa.http
 
+import android.util.Log
 import com.xht.base_lib.http.ApiException
 import java.io.Serializable
 
@@ -19,6 +20,8 @@ class ApiResponse<T> : Serializable {
      */
     private var errorCode = 0
 
+    private val TAG = "http"
+
     /**
      * 如果服务端data肯定不为null，直接将data返回。
      * 假如data为null证明服务端出错,这种错误已经产生并且不可逆，
@@ -28,18 +31,22 @@ class ApiResponse<T> : Serializable {
         when (errorCode) {
             //请求成功
             0, 200 -> {
+                Log.e(TAG, "ApiResponse---请求成功 200")
                 return data!!
             }
             //未登陆请求需要用户信息的接口
             -1001 -> {
+                Log.e(TAG, "ApiResponse---请求失败 -1001 errorMsg=$errorMsg")
                 throw ApiException(errorMsg, errorCode)
             }
             //登录失败
             -1 -> {
+                Log.e(TAG, "ApiResponse---请求失败 -1 errorMsg=$errorMsg")
                 throw ApiException(errorMsg, errorCode)
             }
         }
         //其他错误
+        Log.e(TAG, "ApiResponse---请求失败 errorMsg=$errorMsg")
         throw ApiException(errorMsg, errorCode)
     }
 

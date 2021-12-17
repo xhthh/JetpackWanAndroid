@@ -1,0 +1,62 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/viewA"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="#f00"
+            android:gravity="center"
+            android:text="A" />
+
+        <TextView
+            android:id="@+id/viewB"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="60dp"
+            android:background="#0f0"
+            android:gravity="center"
+            android:text="B" />
+
+        <!--ViewC有了一个elevation属性 -->
+        <TextView
+            android:id="@+id/viewC"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="180dp"
+            android:background="#f00"
+            android:elevation="1dp"
+            android:gravity="center"
+            android:text="C" />
+
+        <TextView
+            android:id="@+id/viewD"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="240dp"
+            android:layout_marginTop="60dp"
+            android:background="#0f0"
+            android:gravity="center"
+            android:text="D" />
+
+    </FrameLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:background="#999999"
+        android:elevation="6dp"
+        android:orientation="horizontal">
+
+
+    </LinearLayout>
+</LinearLayout>

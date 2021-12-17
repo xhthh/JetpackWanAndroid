@@ -1,5 +1,6 @@
 package com.xht.base_lib.base
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -97,4 +98,13 @@ open class BaseViewModel : ViewModel() {
         }
     }
 
+    /**
+     * 处理列表是否有更多数据
+     */
+    protected fun <T> handleList(listLiveData: LiveData<MutableList<T>>, pageSize: Int = 20) {
+        val listSize = listLiveData.value?.size ?: 0
+        if (listSize % pageSize != 0) {
+            footLiveDate.value = 1
+        }
+    }
 }

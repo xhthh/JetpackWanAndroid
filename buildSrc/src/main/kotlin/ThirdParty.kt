@@ -10,6 +10,8 @@ object ThirdParty {
     const val rxAndroid = "io.reactivex.rxjava2:rxandroid:2.1.1"
 
     const val cookieJar = "com.github.franmontiel:PersistentCookieJar:v1.0.1"
+    const val baseQuickAdapter = "com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.50"
+
 
     const val banner = "cn.bingoogolapple:bga-banner:2.2.7"
 
@@ -17,6 +19,13 @@ object ThirdParty {
     object Glide {
         const val glide = "com.github.bumptech.glide:glide:4.11.0"
         const val transformations = "jp.wasabeef:glide-transformations:4.1.0"
+    }
+
+    val smart = Smart
+    object Smart {
+        private const val smart_version = "1.1.2"
+        const val smart = "com.scwang.smartrefresh:SmartRefreshLayout:$smart_version"
+        const val head = "com.scwang.smartrefresh:SmartRefreshHeader:$smart_version"
     }
 
     val retrofit = Retrofit

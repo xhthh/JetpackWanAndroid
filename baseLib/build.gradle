@@ -34,4 +34,8 @@ dependencies {
     api(ThirdParty.banner)
     api(ThirdParty.glide.glide)
     api(ThirdParty.glide.transformations)
+
+    api(ThirdParty.smart.smart)
+    api(ThirdParty.smart.head)
+    api(ThirdParty.baseQuickAdapter)
 }
