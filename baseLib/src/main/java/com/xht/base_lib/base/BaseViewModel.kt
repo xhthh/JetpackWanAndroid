@@ -43,7 +43,9 @@ open class BaseViewModel : ViewModel() {
      */
     protected fun <T> launch(block: suspend () -> T) {
         viewModelScope.launch {
+            println("BaseViewModel---launch()1---当前线程=" + Thread.currentThread().name)
             runCatching {
+                println("BaseViewModel---launch()2---当前线程=" + Thread.currentThread().name)
                 block()
             }.onFailure {
                 if (BuildConfig.DEBUG) {

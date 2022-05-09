@@ -41,6 +41,7 @@ class HomeVM : BaseViewModel() {
      */
     fun getBanner() {
         launch {
+            println("HomeVM---getBanner()---当前线程=" + Thread.currentThread().name)
             _banner.value = repo.getBanner()
         }
     }
@@ -53,6 +54,7 @@ class HomeVM : BaseViewModel() {
     fun getArticle() {
         launch {
             val list = mutableListOf<ArticleListBean>()
+            //async 协程并发操作，通过 await() 获取结果
             val topArticle = viewModelScope.async {
                 repo.getTopArticles()
             }

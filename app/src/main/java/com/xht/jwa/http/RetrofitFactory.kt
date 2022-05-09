@@ -44,7 +44,8 @@ object RetrofitFactory {
         return Retrofit.Builder()
             .client(okHttpClient)
             .addConverterFactory(GsonConverterFactory.create())
-            .baseUrl(ApiConstants.BASE_URL)
+            //.baseUrl(ApiConstants.BASE_URL)
+            .baseUrl("http://visit-app-test.sc.9f.cn")
             .build()
     }
 

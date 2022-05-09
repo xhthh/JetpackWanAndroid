@@ -58,7 +58,7 @@ class HomeFragment : BaseLazyLoadingFragment<FragmentHomeBinding>(),
         (binding.rvHomeList.itemAnimator as SimpleItemAnimator).supportsChangeAnimations = false
         binding.smartRefresh.setOnRefreshListener {
             homeVm?.getBanner()
-            homeVm?.getArticle()
+//            homeVm?.getArticle()
         }
         //上拉加载
         binding.smartRefresh.setOnLoadMoreListener {

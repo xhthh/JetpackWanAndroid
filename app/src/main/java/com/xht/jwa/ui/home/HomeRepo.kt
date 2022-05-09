@@ -51,6 +51,7 @@ class HomeRepo : BaseRepository() {
      * 获取banner
      */
     suspend fun getBanner() = withIO {
+        println("HomeRepo---getBanner()---当前线程=" + Thread.currentThread().name)
         RetrofitManager.getApiService(ApiService::class.java)
             .getBanner()
             .data()
